@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head><title th:text="${title}"/></head>
+	<head><title th:text="${title} + ' ' + ${version}"/></head>
 	<body>
 		<header>
-			<h1 th:text="${title}"/>
+			<h1 th:text="${title} + ' ' + ${version}"/>
 		</header>
 	</body>
 </html>
