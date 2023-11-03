@@ -9,19 +9,21 @@
 		<header id="site-header">
 			<h1 th:text="${title} + ' ' + ${version}"/>
 		</header>
-		<main>
-			<article>
+		<main id="site-main">
+			<form>
 				<h2>Notification system:</h2>
-				<label>System: </label>
-				<select id="system">
-					<option id="pulsar">Pulsar</option>
-				</select>
-				<br>
-				<label>URL: </label>
-				<input type="url" id="url">
-				<br>
+				<div id="system-div">
+					<label>System: </label>
+					<select id="system">
+						<option id="pulsar">Pulsar</option>
+					</select>
+				</div>
+				<div id="url-div">
+					<label>URL: </label>
+					<input type="url" id="url">
+				</div>
 				<button id="start">Start</button>
-			</article>
+			</form>
 		</main>
 	</body>
 </html>

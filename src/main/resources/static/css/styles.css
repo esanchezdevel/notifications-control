@@ -7,3 +7,61 @@ body {
 	border-bottom: 1px solid blue;
 	margin-top: 20px;
 }
+
+#site-header h1 {
+	font-size: 35px;
+	/* 1 pixel black shadow to left, top, right and bottom */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	color: #85c1e9;
+}
+
+#site-main {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#site-main form {
+	border: 1px solid grey;
+	width: 600px;
+	text-align: center;
+	box-shadow: 5px 5px 5px grey;
+	padding-bottom: 20px;
+}
+
+#site-main form h2 {
+	margin-bottom: 20px;
+}
+
+#system-div {
+	margin-bottom: 20px;
+}
+
+#system-div label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+#system-div select {
+	display: inline-block;
+	width: 350px;
+}
+
+#url-div {
+	margin-bottom: 20px;
+}
+
+#url-div label {
+	display: inline-block;
+	width: 150px;
+	text-align:right;
+	padding-right: 20px;
+}
+
+#url-div input {
+	display: inline-block;
+	width: 350px;
+}
