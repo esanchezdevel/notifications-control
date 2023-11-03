@@ -10,7 +10,7 @@
 			<h1 th:text="${title} + ' ' + ${version}"/>
 		</header>
 		<main id="site-main">
-			<form>
+			<form id="main-form">
 				<h2>Notification system:</h2>
 				<div id="system-div">
 					<label>System: </label>
@@ -22,8 +22,15 @@
 					<label>URL: </label>
 					<input type="url" id="url">
 				</div>
-				<button id="start" class="custom-button">Start</button>
+				<button type="button" id="start" class="custom-button">Start</button>
 			</form>
 		</main>
+		<script>
+			const button = document.getElementById("start");
+			
+			button.addEventListener("click", function() {
+				console.log("clicked");
+			});
+		</script>
 	</body>
 </html>
