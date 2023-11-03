@@ -3,6 +3,16 @@ body {
 	font-size: 12px;
 }
 
+.custom-button {
+	background: #1a5276;
+	color: white;
+	font-weight: bold;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
 #site-header {
 	border-bottom: 1px solid blue;
 	margin-top: 20px;
@@ -65,3 +75,4 @@ body {
 	display: inline-block;
 	width: 350px;
 }
+
