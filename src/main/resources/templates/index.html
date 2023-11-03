@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head><title th:text="${title} + ' ' + ${version}"/></head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${title} + ' ' + ${version}"/>
+		
+		<link rel="stylesheet" th:href="@{/css/styles.css}"/>
+	</head>
 	<body>
-		<header>
+		<header id="site-header">
 			<h1 th:text="${title} + ' ' + ${version}"/>
 		</header>
+		<main>
+			<article>
+				<h2>Notification system:</h2>
+				<label>System: </label>
+				<select id="system">
+					<option id="pulsar">Pulsar</option>
+				</select>
+				<br>
+				<label>URL: </label>
+				<input type="url" id="url">
+				<br>
+				<button id="start">Start</button>
+			</article>
+		</main>
 	</body>
 </html>
