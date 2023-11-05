@@ -10,13 +10,34 @@
 				const button = document.getElementById("start");
 			
 				button.addEventListener("click", function() {
-					console.log("TEST--start button clicked");
 					
+					// Get data from the html form
 					const form = document.forms["main-form"];
 					const system = form.elements.system;
 					const url = form.elements.url;
 					
-					console.log("TEST--system: " + system.value + " - url: " + url.value);
+					const requestBody = {
+						system: system.value,
+						url: url.value
+					};
+					
+					// Execute request to API to register the system to monitorize
+					fetch("/api/system/register", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"Accept": "application/json"
+						},
+						body: JSON.stringify(requestBody)
+					})
+					.then(response => response.json())
+					.then(data => {
+						//API response data
+						console.log(data);
+					})
+					.catch(error => {
+						console.log("Error: ", error);
+					});
 				});
 			});
 		</script>
