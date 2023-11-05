@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${title} + ' ' + ${version}"/>
+		
+		<link rel="stylesheet" th:href="@{/css/styles.css}"/>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				const button = document.getElementById("start");
+			
+				button.addEventListener("click", function() {
+					
+					// Get data from the html form
+					const form = document.forms["main-form"];
+					const system = form.elements.system;
+					const url = form.elements.url;
+					
+					const requestBody = {
+						system: system.value,
+						url: url.value
+					};
+					
+					// Execute request to API to register the system to monitorize
+					fetch("/api/system/register", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"Accept": "application/json"
+						},
+						body: JSON.stringify(requestBody)
+					})
+					.then(response => response.json())
+					.then(data => {
+						//API response data
+						console.log(data);
+					})
+					.catch(error => {
+						console.log("Error: ", error);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header id="site-header">
+			<h1 th:text="${title} + ' ' + ${version}"/>
+		</header>
+		<main id="site-main">
+			<form name="main-form" id="main-form">
+				<h2>Notification system:</h2>
+				<div id="system-div">
+					<label>System: </label>
+					<select name="system" id="system">
+						<option id="pulsar">Pulsar</option>
+					</select>
+				</div>
+				<div id="url-div">
+					<label>URL: </label>
+					<input name="url" type="url" id="url">
+				</div>
+				<button type="button" id="start" class="custom-button">Start</button>
+			</form>
+		</main>
+	</body>
+</html>
