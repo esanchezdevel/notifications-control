@@ -4,33 +4,42 @@
 		<title th:text="${title} + ' ' + ${version}"/>
 		
 		<link rel="stylesheet" th:href="@{/css/styles.css}"/>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				const button = document.getElementById("start");
+			
+				button.addEventListener("click", function() {
+					console.log("TEST--start button clicked");
+					
+					const form = document.forms["main-form"];
+					const system = form.elements.system;
+					const url = form.elements.url;
+					
+					console.log("TEST--system: " + system.value + " - url: " + url.value);
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<header id="site-header">
 			<h1 th:text="${title} + ' ' + ${version}"/>
 		</header>
 		<main id="site-main">
-			<form id="main-form">
+			<form name="main-form" id="main-form">
 				<h2>Notification system:</h2>
 				<div id="system-div">
 					<label>System: </label>
-					<select id="system">
+					<select name="system" id="system">
 						<option id="pulsar">Pulsar</option>
 					</select>
 				</div>
 				<div id="url-div">
 					<label>URL: </label>
-					<input type="url" id="url">
+					<input name="url" type="url" id="url">
 				</div>
 				<button type="button" id="start" class="custom-button">Start</button>
 			</form>
 		</main>
-		<script>
-			const button = document.getElementById("start");
-			
-			button.addEventListener("click", function() {
-				console.log("clicked");
-			});
-		</script>
 	</body>
 </html>
