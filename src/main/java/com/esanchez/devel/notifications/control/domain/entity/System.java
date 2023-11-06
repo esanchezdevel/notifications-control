@@ -2,17 +2,17 @@ package com.esanchez.devel.notifications.control.domain.entity;
 
 public class System {
 	
-	private String system;
+	private String name;
 	
 	private String url;
 	
-	public System(String system, String url) {
-		this.system = system;
+	public System(String name, String url) {
+		this.name = name;
 		this.url = url;
 	}
 
-	public String getSystem() {
-		return system;
+	public String getName() {
+		return name;
 	}
 
 	public String getUrl() {
@@ -21,6 +21,6 @@ public class System {
 
 	@Override
 	public String toString() {
-		return "System [system=" + system + ", url=" + url + "]";
+		return "System [name=" + name + ", url=" + url + "]";
 	}
 }

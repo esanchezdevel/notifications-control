@@ -5,7 +5,7 @@ import com.esanchez.devel.notifications.control.domain.entity.System;
 
 public class SystemMapper {
 
-	private SystemMapper() {};
+	private SystemMapper() {}
 	
 	public static System dtoToEntity(SystemRegisterDTO dto) {
 		return new System(dto.getSystem(), dto.getUrl());
