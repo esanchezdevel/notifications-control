@@ -1,5 +1,7 @@
 package com.esanchez.devel.notifications.control.domain.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +13,11 @@ import com.esanchez.devel.notifications.control.infrastructure.persistence.Memor
 @Service
 public class SystemServiceImpl implements SystemService {
 
+	private static final Logger logger = LogManager.getLogger(SystemServiceImpl.class);
+	
 	@Override
 	public void register(System system) throws ServerException {
-		java.lang.System.out.println("System to be saved: " + system);
+		logger.info("System to be saved: {}", system);
 		
 		if (MemoryObjects.getSessionSystem() == null) {
 			synchronized(this) {
