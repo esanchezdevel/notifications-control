@@ -2,9 +2,11 @@ package com.esanchez.devel.notifications.control.app.controller;
 
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doNothing;
-
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -46,4 +48,23 @@ public class ApiControllerTest {
 		assertEquals(200, response.getBody().getCode());
 		assertEquals("OK", response.getBody().getMessage());
 	}
+	
+	@Test
+	void givenSystemRegisterDTOThenThrowException() throws ServerException {
+		
+		SystemRegisterDTO request = new SystemRegisterDTO();
+		request.setSystem("test");
+		request.setUrl("http://127.0.0.1:8080");
+		
+		doThrow(new ServerException(404, "Not found")).when(systemService).register(any(System.class));
+		
+		ResponseEntity<ApiResponseDTO> response = apiController.systemRegister(request);
+	
+		assertNotNull(response);
+		assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+		assertNotNull(response.getBody());
+		assertEquals(404, response.getBody().getCode());
+		assertEquals("Not found", response.getBody().getMessage());
+	}
+	
 }
