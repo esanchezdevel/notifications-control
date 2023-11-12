@@ -2,7 +2,7 @@ package com.esanchez.devel.notifications.control.app.dto;
 
 public class SystemRegisterDTO {
 	
-	private SystemRegisterDTO() {}
+	public SystemRegisterDTO() {}
 	
 	private String system;
 	
