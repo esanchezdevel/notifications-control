@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${title} + ' ' + ${version}"/>
+		
+		<link rel="stylesheet" th:href="@{/css/styles.css}"/>
+	</head>
+	<body>
+		<header id="site-header">
+			<h1 th:text="${title} + ' ' + ${version}"/>
+		</header>
+		<main id="site-main">
+				<h2>Operations:</h2>
+				<ul>
+					<li><a href="/api/tenants/list">List Tenants</a></li>
+					<!-- TODO in each tenant we should have different operations to list namespaces... -->
+				</ul>
+		</main>
+	</body>
+</html>

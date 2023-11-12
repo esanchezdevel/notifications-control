@@ -17,4 +17,13 @@ public class WebController {
 		
 		return "index";
 	}
+	
+	@GetMapping("/main")
+	public String main(Model model) {
+		
+		model.addAttribute("title", Constants.TITLE);
+		model.addAttribute("version", Constants.VERSION);
+		
+		return "main";
+	}
 }
