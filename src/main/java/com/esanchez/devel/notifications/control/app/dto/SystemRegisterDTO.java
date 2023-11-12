@@ -2,8 +2,6 @@ package com.esanchez.devel.notifications.control.app.dto;
 
 public class SystemRegisterDTO {
 	
-	public SystemRegisterDTO() {}
-	
 	private String system;
 	
 	private String url;

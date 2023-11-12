@@ -30,6 +30,6 @@ public class TenantController {
 		
 		List<String> tenants = tenantsService.getTenants();
 		
-		return ResponseEntity.ok(TenantsMapper.ListOfTenantsToDto(tenants));
+		return ResponseEntity.ok(TenantsMapper.listOfTenantsToDto(tenants));
 	}
 }

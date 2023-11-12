@@ -2,8 +2,11 @@ package com.esanchez.devel.notifications.control.domain.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.esanchez.devel.notifications.control.domain.service.TenantsService;
 
+@Service
 public class TenantsServiceImpl implements TenantsService {
 
 	@Override

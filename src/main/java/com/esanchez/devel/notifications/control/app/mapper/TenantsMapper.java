@@ -8,7 +8,7 @@ public class TenantsMapper {
 
 	private TenantsMapper() {}
 	
-	public static ListTenantsResponseDTO ListOfTenantsToDto(List<String> tenants) {
+	public static ListTenantsResponseDTO listOfTenantsToDto(List<String> tenants) {
 		ListTenantsResponseDTO dto = new ListTenantsResponseDTO();
 		dto.setTenants(tenants);
 		return dto;

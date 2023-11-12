@@ -23,7 +23,7 @@ import com.esanchez.devel.notifications.control.domain.exception.ServerException
 import com.esanchez.devel.notifications.control.domain.service.SystemService;
 
 @ExtendWith(MockitoExtension.class)
-public class ApiControllerTest {
+class ApiControllerTest {
 
 	@Mock
 	private SystemService systemService;
